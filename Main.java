@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
 
-    // Solve polynomial using shares
+    
     static BigInteger[] solvePolynomial(List<long[]> shares, int degree) {
         int n = shares.size();
         BigInteger[][] A = new BigInteger[n][degree + 1];
@@ -23,7 +23,7 @@ public class Main {
         return gaussianSolve(A, b, degree + 1);
     }
 
-    // Gaussian elimination
+    
     static BigInteger[] gaussianSolve(BigInteger[][] A, BigInteger[] b, int vars) {
         int n = b.length;
         BigInteger[][] aug = new BigInteger[n][vars + 1];
@@ -69,14 +69,14 @@ public class Main {
         return x;
     }
 
-    // Read file into a string
+    
     static String readFile(String filename) throws IOException {
         return new String(Files.readAllBytes(Paths.get(filename)));
     }
 
     public static void main(String[] args) {
         try {
-            // Read JSON
+            
             String json = readFile("testcase1.json");
             JSONObject obj = new JSONObject(json);
 
